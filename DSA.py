@@ -175,13 +175,69 @@
 
 # SEARCHING 
 
-def serach(list,key):
-    for i in range(len(list)):
-        if list[i]==key:
-            return 1
+# def serach(list,key):
+#     for i in range(len(list)):
+#         if list[i]==key:
+#             return 1
 
-#BINARY SEARCH 
+# #merge sort 
 
-def 
+# class Solution(object):
+#     def sortArray(self, nums):
+#         if len(nums) <= 1:
+#             return nums
+        
+#         mid = len(nums) // 2
+#         left = self.sortArray(nums[:mid])
+#         right = self.sortArray(nums[mid:])
+        
+#         return self.merge(left, right)
+    
+#     def merge(self, left, right):
+#         result = []
+#         i = j = 0
+        
+#         while i < len(left) and j < len(right):
+#             if left[i] < right[j]:
+#                 result.append(left[i])
+#                 i += 1
+#             else:
+#                 result.append(right[j])
+#                 j += 1
+        
+#         result.extend(left[i:])
+#         result.extend(right[j:])
+        
+#         return result
+    
+# #Bubble sort
+# class Solution(object):
+#     def bubbleSort(self, nums):
+#         n = len(nums)
+        
+#         for i in range(n):
+#             swapped = False
+            
+#             for j in range(0, n - i - 1):
+#                 if nums[j] > nums[j + 1]:
+#                     nums[j], nums[j + 1] = nums[j + 1], nums[j]
+#                     swapped = True
+            
+#             if not swapped:
+#                 break
+        
+#         return nums
 
+arr=[1,-2,3,0,-4,7,6,2,9]   
+def selectionsort(arr):
+    n=len(arr)
+
+    for i in range(n):
+        min_index=i 
+        for j in range(i+1,n):
+            if arr[j]< arr[min_index]:
+                min_index=j
+        arr[i],arr[min_index]=arr[min_index],arr[i]
+selectionsort(arr)
+print(arr)
 
