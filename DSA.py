@@ -241,3 +241,115 @@ def selectionsort(arr):
 selectionsort(arr)
 print(arr)
 
+#Tree 
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+root=Node(1)
+root.left=Node(5)
+root.right=Node(6)
+
+# BFS (Breadth first search - Pre order (Root left right), Inorder (Left root right), Postorder ()
+# DFS (Depth first search)
+
+def preoder(self,root):
+    l1=[]
+    if root is None:
+        return 1
+    traverse(root,1)
+
+#POST ORDER 
+
+def post(self,root):
+    l1=[]
+    self.traverse(root,l1)
+    return l1
+def traverse(self,root,l1):
+        if root is None:
+            return
+        self.traverse(root.left,l1)
+        self.traverse(root.right,l1)
+        l1.append(root.val)
+
+#CONSTRUCT TREE
+l1=int(input("Enter the number of nodes in tree: "))
+nodes = []  
+for i in range(l1):
+    data = int(input(f"Enter the value of node {i+1}: "))
+    nodes.append(Node(data))
+for i in range(l1):
+    left_index = int(input(f"Enter the index of left child for node {i+1} (or -1 if no left child): "))
+    right_index = int(input(f"Enter the index of right child for node {i+1} (or -1 if no right child): "))
+    if left_index != -1:
+        nodes[i].left = nodes[left_index]
+    if right_index != -1:
+        nodes[i].right = nodes[right_index]
+
+#Sir's method for construct tree
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+l1=int(input("Enter the number of nodes in tree: "))
+root=fromTree(l1)
+def fromTree(l1):
+    if not l1:
+        return None
+    val=l1.pop(0)
+    if val is None:
+        return None 
+    mains=Node(val)
+    mains.left=fromTree(l1)
+    mains.right=fromTree(l1) 
+    return mains
+
+
+#Again sir's method for construct tree
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+class Traverse:
+
+    def build(self,values):
+        if not values:
+            return None
+
+        val = values.pop(0)
+
+        if val is None:
+            return None
+
+        root = Node(val)
+        root.left = self.build(values)
+        root.right = self.build(values)
+
+        return root
+
+    def inorder(self,root):
+        if root is None:
+            return
+        self.inorder(root.left)
+        print(root.data,end=" ")
+        self.inorder(root.right)
+
+
+
+values = [1, 2, 4, None, None, 5, None, None, 3, None, 6]
+T = Traverse()
+root = T.build(values)
+T.inorder(root)     
+    
+
+#GRAPH 
+class Graph:
+    def __init__(self):
+        dict={}
+    def add(self,s,d):
+        if s is not in self.dict:
+            self.dict[s]=[]
+            
